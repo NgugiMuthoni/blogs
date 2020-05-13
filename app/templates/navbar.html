@@ -1,0 +1,24 @@
+
+    <nav class="navbar navbar-expand-md elegant-color fixed-top">
+        <div class="container-fluid text-light">
+            <a class="navbar-brand mr-4 btn btn-md text-light" href="{{url_for('main.index')}}">Blog-X</a>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link btn btn-md text-light" href="{{url_for('main.profile')}}">profile</a>
+                </div>
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link btn btn-md text-light" href="{{ url_for('main.new_post') }}">New Post</a>
+                    <a class="nav-item nav-link btn btn-md text-light" href="{{ url_for('auth.logout') }}">Logout</a>
+
+                    <a class="nav-item nav-link btn btn-md text-light" href="{{ url_for('auth.login') }}">Login</a>
+                    <a class="nav-item nav-link btn btn-md text-light" href="{{ url_for('auth.signup') }}">Register</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>

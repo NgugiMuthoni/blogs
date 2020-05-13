@@ -1,0 +1,2 @@
+python-3.7.2
+SECRET_KEY='YOURS'

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% macro display_comments(comments) %}
+<h1 class="text-center modal-header text-monospace text-uppercase">Comments</h1>
+<div class="mt-5 card text-light elegant-color">
+    <br>
+    <div class="col-md-12">        
+        <div class="row">
+            {% for comment in comments %}
+            <div class="col-md-2">
+                <img class="img-thumbnail blue-gradient"
+                    src="{{ url_for('static', filename='profile_pic/' + comment.author.image_file) }}">
+            </div>
+            <div class="col-md-8 card-body row">
+                <p class="card-text text-light text-monospace col-md-6" >Comment by: {{ comment.author.username }}</p>
+                <p class="card-text text-light text-monospace col-md-6" >Comment: {{comment.comment}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+<br>
+</div>
+{% endmacro %}

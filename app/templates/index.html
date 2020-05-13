@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%from 'display_quote_macro.html' import display_quotes%}
+{% from 'display_post_macro.html' import display_posts%}
+{%block content%}
+ <h1>{{display_quotes(quotes)}}</h1>
+{% for post in posts %}
+
+<article class="card text-light elegant-color">
+    <br>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-2">
+                <br><br>
+                <img class="img-thumbnail blue-gradient"
+                src="{{ url_for('static', filename='profile_pic/' + post.author.image_file) }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                        <p class="modal-header text-monospace">Posted by:{{ post.author.username }}   
+                            <small class="text-muted">Posted on: {{ post.date_posted.strftime('%Y-%m-%d') }}</small></p>
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <br><br><br>
+                <a class="btn blue-gradient text-uppercase" href="{{ url_for('main.mypost', post_id=post.id) }}">read more</a>
+            </div>
+        </div>
+    </div>
+   
+   
+</article>
+{% endfor %}
+{%endblock%}
